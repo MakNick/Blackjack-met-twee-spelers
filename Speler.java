@@ -7,16 +7,16 @@ public class Speler {
 	ArrayList<Kaart> kaartenInHand = new ArrayList<Kaart>();
 	int startWaarde;
 	int getrokkenWaarde;
+	int totaleWaarde;
+	boolean doorgaanSpeler = true;
+	boolean passen = false;
 	
-	Speler(String naam) {
-		this.naam = naam;
-	}
 	
 	void voegKaartInHand(Kaart kaart){
 		kaartenInHand.add(kaart);
 		getrokkenWaarde = kaart.rekenWaarde;
-		int totaleWaarde = startWaarde + getrokkenWaarde;
-		System.out.println(naam + " krijg de volgende kaart: " + kaart);
+		totaleWaarde = startWaarde + getrokkenWaarde;
+		System.out.println(naam + " krijgt de volgende kaart: " + kaart);
 		System.out.println(naam + " heeft de volgende kaarten in de hand: " + kaartenInHand);
 		System.out.println("De totale waarde is: " + totaleWaarde + "\n");
 		startWaarde = totaleWaarde;

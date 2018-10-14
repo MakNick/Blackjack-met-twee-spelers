@@ -10,7 +10,7 @@ class KaartGenerator{
 	ArrayList<Kaart> nieuwDek = new ArrayList<Kaart>();
 	int startWaarde;
 	int getrokkenWaarde;
-	
+		
 	void vulDek() {
 		for(int indexKleur = 0; indexKleur < kleur.length; indexKleur++) {
 			for (int indexWaarde = 0; indexWaarde < waarde.length; indexWaarde++){
@@ -32,9 +32,4 @@ class KaartGenerator{
 		nieuwDek.remove(0);	
 		return kaart;
 	}	
-	
-	public void pasKaart() {
-		System.out.println("Je past");
-		nieuwDek.remove(0);	
-	}
 }
