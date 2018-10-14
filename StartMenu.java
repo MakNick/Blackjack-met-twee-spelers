@@ -65,19 +65,18 @@ public class StartMenu {
 			case "1": 
 				speler1.voegKaartInHand(kaartGenerator.geefKaart(kaart));
 //				System.out.println("De volgende kaarten zitten nog in het dek: " + kaartGenerator.nieuwDek + "\n");	
+				speler1.doorgaanSpeler = false;
+				speler2.doorgaanSpeler = true;
 				if(speler1.startWaarde < maxScore && speler2.passen == true){
 					speler1.doorgaanSpeler = true;
 				}
-				speler1.doorgaanSpeler = false;
-				speler2.doorgaanSpeler = true;
-				
 				break;
 			case "2":
 				System.out.println("Je past, de totale eindscore is: " + speler1.startWaarde + "\n");
 				speler1.passen = true;
-				doorgaan = false;
 				speler1.doorgaanSpeler = false;
 				speler2.doorgaanSpeler = true;
+				doorgaan = false;
 				break;
 			case "3": 
 				doorgaan = false;
@@ -95,25 +94,24 @@ public class StartMenu {
 			case "1": 
 				speler2.voegKaartInHand(kaartGenerator.geefKaart(kaart));
 //				System.out.println("De volgende kaarten zitten nog in het dek: " + kaartGenerator.nieuwDek + "\n");	
+				speler2.doorgaanSpeler = false;
+				speler1.doorgaanSpeler = true;
 				if(speler2.startWaarde < maxScore && speler1.passen == true){
 					speler2.doorgaanSpeler = true;
 				}
-				speler2.doorgaanSpeler = false;
-				speler1.doorgaanSpeler = true;
-				
 				break;
 			case "2": 
 				System.out.println("Je past, de totale eindscore is: " + speler2.startWaarde + "\n");
 				speler2.passen = true;
-				doorgaan = false;
-				speler2.doorgaanSpeler = false;
 				speler1.doorgaanSpeler = true;
+				speler2.doorgaanSpeler = false;
+				doorgaan = false;
 				break;
 			case "3": 
 				doorgaan = false;
 				speler1.passen = true;
 				speler2.passen = true;
-				System.out.println("Quit");
+				System.out.println("Einde spel");
 				break;
 			}
 
@@ -175,4 +173,5 @@ public class StartMenu {
 			speler2.printStatus();
 			System.out.println();
 		}
+		
 }
